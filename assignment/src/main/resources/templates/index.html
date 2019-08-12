@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Đường phố Hà Nội ngày nay</title>
+</head>
+<body>
+<div class="container mt-5">
+    <form th:action="@{/index}" th:method="post">
+
+        <div class="form-group">
+            <label>district</label>
+            <select class="form-control">
+                <option th:value="${d.id}" th:each="d: ${districts}" th:text="${d.name}"></option>
+            </select>
+        </div>
+    </form>
+</div>
+</body>
+</html>
